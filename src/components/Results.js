@@ -1,5 +1,6 @@
 import React from 'react';
 import "./styles/Results.css";
+import VideoCard from "./VideoCard";
 
 const Results = () => {
     return (
