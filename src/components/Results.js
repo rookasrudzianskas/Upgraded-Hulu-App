@@ -31,7 +31,8 @@ const Results = () => {
         <div className="results">
                 {/* mapping per all the movies objects in the movies array of the objects*/}
                 {movies.map((movie) => (
-                    <VideoCard />
+                    // passing all the movie data to the VIdeoCard
+                    <VideoCard movie={movie} />
                     ))}
 
         </div>
