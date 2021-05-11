@@ -1,0 +1,20 @@
+.nav {
+    display: flex;
+    color: white;
+    overflow-x: scroll;
+    padding: 10px;
+    padding-left: 40px;
+}
+
+.header::-webkit-scrollbar  {
+    display: none;
+}
+
+.nav {
+    -ms-overflow-style:  none;
+    scrollbar-width: none;
+}
+
+.nav > h2 {
+    cursor: pointer;
+}
