@@ -26,14 +26,16 @@ const Results = ({ selectedOption }) => {
 
         }
         fetchData();
-    }, [])
+    //    for dependencies, if the selectedOption changes, we have to fire the useEffect once more
+    }, [selectedOption])
 
     return (
         <div className="results">
                 {/* mapping per all the movies objects in the movies array of the objects*/}
                 {movies?.map((movie) => (
                     // passing all the movie data to the VIdeoCard
-                    <VideoCard movie={movie} />
+                    // key for react to know, that it does not need to rerender all the components, just the changed one
+                    <VideoCard key={movie.id} movie={movie} />
                     ))}
 
         </div>
