@@ -8,6 +8,15 @@
     background-color: black;
 }
 
+.header::-webkit-scrollbar  {
+    display: none;
+}
+
+.header {
+    -ms-overflow-style:  none;
+    scrollbar-width: none;
+}
+
 .header__icon > .MuiSvgIcon-root {
     /* as much margin on left and on the right*/
     margin-left: auto;
