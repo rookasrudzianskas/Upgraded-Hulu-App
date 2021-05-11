@@ -14,9 +14,10 @@ const VideoCard  = ({ movie }) => {
             <p className="rokas">{movie.overview}</p>
             <h2>{movie.title || movie.original_name}</h2>
             {/* only show the media type if it is available, if not, do not show it*/}
-            <p>
+            <p className="videoCard__stats">
                 {movie.media_type && `${movie.media_type} •`}
-                <ThumbUpIcon />{movie.vote_count}</p>
+                {movie.release_date || movie.first_air_date} •
+                <ThumbUpIcon />{" "}{movie.vote_count}</p>
         </div>
     );
 };
