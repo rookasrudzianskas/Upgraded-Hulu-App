@@ -13,7 +13,10 @@ const VideoCard  = ({ movie }) => {
             {/* in which there is a text*/}
             <p className="rokas">{movie.overview}</p>
             <h2>{movie.title || movie.original_name}</h2>
-            <p><ThumbUpIcon />{movie.vote_count}</p>
+            {/* only show the media type if it is available, if not, do not show it*/}
+            <p>
+                {movie.media_type && `${movie.media_type} •`}
+                <ThumbUpIcon />{movie.vote_count}</p>
         </div>
     );
 };
