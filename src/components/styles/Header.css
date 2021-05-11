@@ -1,11 +1,49 @@
 .header {
-    color: red;
+    color: white;
     display: flex;
     padding: 20px;
     align-items: center;
     justify-content: space-between;
     overflow-x: scroll;
     background-color: black;
+}
+
+.header__icon > .MuiSvgIcon-root {
+    /* as much margin on left and on the right*/
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+}
+
+.header__icon--active > p {
+    display: inline-flex !important;
+}
+
+.header__icon:hover > p {
+    /* by default if you ha div, show the pp taf then we hover*/
+    display: inline-flex;
+}
+
+.header__icon > p {
+    display: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: small;
+}
+
+.header__icon {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    cursor: pointer;
+}
+
+.header__icons {
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .header > img {
