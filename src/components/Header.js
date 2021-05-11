@@ -12,6 +12,12 @@ const Header = () => {
         <div className="header">
             <div className="header__icons">
             {/*    All icons in here*/}
+                <HomeIcon />
+                <FlashOnIcon />
+                <LiveTvIcon />
+                <VideoLibraryIcon />
+                <SearchIcon />
+                <PersonOutlineIcon />
             </div>
 
             <img
