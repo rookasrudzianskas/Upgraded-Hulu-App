@@ -20,10 +20,11 @@ const Results = () => {
             // it is going to use the base url from the axios instance
             // it makes the request, with the base url from the axios and the fetch url from the requests
             const request = await axios.get(requests.fetchActionMovies);
-            console.log("🚀", request);
+            setMovies(request.data.results)
+            return request;
 
         }
-        fetchData()
+        fetchData();
     }, [])
 
     return (
