@@ -4,7 +4,8 @@ import VideoCard from "./VideoCard";
 import axios from "../axios";
 import requests from "../requests";
 
-const Results = () => {
+// takes the prop from the navbar, selected option is going to be option of request we are going to search acccording to it
+const Results = ({ selectedOption }) => {
 
     // we store the data in here
     // the array of the movies
@@ -19,7 +20,7 @@ const Results = () => {
             // because we wati for the response to come back
             // it is going to use the base url from the axios instance
             // it makes the request, with the base url from the axios and the fetch url from the requests
-            const request = await axios.get(requests.fetchActionMovies);
+            const request = await axios.get(selectedOption);
             setMovies(request.data.results)
             return request;
 
@@ -30,7 +31,7 @@ const Results = () => {
     return (
         <div className="results">
                 {/* mapping per all the movies objects in the movies array of the objects*/}
-                {movies.map((movie) => (
+                {movies?.map((movie) => (
                     // passing all the movie data to the VIdeoCard
                     <VideoCard movie={movie} />
                     ))}

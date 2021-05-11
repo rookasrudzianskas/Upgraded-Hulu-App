@@ -2,17 +2,23 @@ import './App.css';
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Results from "./components/Results";
+import {useState} from "react";
+import requests from "./requests";
 
 function App() {
+  // this is to store the selected option
+  // the first cateegory it gets by default the loads, is request.fetchtrending.
+  //initial value
+  const [selectedOption, setSelectedOption] = useState(requests.fetchTrending);
   return (
     <div className="app">
 
       <Header />
     {/*   Header at the top */}
-        <Nav />
+        <Nav setSelectedOption={setSelectedOption}/>
     {/*    Navigation */}
-
-        <Results />
+    {/* passing selected option to the results*/}
+        <Results selectedOption={selectedOption} />
     {/*  Results  */}
     </div>
   );
