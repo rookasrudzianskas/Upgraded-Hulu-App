@@ -3,7 +3,7 @@ import "./styles/Results.css";
 import VideoCard from "./VideoCard";
 import axios from "../axios";
 import requests from "../requests";
-
+import FlipMove from "react-flip-move";
 // takes the prop from the navbar, selected option is going to be option of request we are going to search acccording to it
 const Results = ({ selectedOption }) => {
 
@@ -32,11 +32,15 @@ const Results = ({ selectedOption }) => {
     return (
         <div className="results">
                 {/* mapping per all the movies objects in the movies array of the objects*/}
-                {movies?.map((movie) => (
-                    // passing all the movie data to the VIdeoCard
-                    // key for react to know, that it does not need to rerender all the components, just the changed one
-                    <VideoCard key={movie.id} movie={movie} />
-                    ))}
+                {/*Whit the the cool animation*/}
+                    <FlipMove>
+                        {movies?.map((movie) => (
+                            // passing all the movie data to the VIdeoCard
+                            // key for react to know, that it does not need to rerender all the components, just the changed one
+                            <VideoCard key={movie.id} movie={movie} />
+                        ))}
+                    </FlipMove>
+
 
         </div>
     );

@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import "./styles/VideoCard.css";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 
 // this is image base url
 const base_url = "https://image.tmdb.org/t/p/original/";
+// ref points to something in the page, so in this case, if points to the div with the video card
 
-const VideoCard  = ({ movie }) => {
+const VideoCard  = forwardRef(({ movie }, ref) => {
     return (
-        <div className="videoCard">
+        <div ref={ref} className="videoCard">
             <img src={`${base_url}${movie.backdrop_path || movie.poster_path}`} alt=" movie poster"/>
             {/* if the text goes more than one line, and the element is pd, so smaller text with ... and the text is from props movie object*/}
             {/* in which there is a text*/}
@@ -20,6 +21,6 @@ const VideoCard  = ({ movie }) => {
                 <ThumbUpIcon />{" "}{movie.vote_count}</p>
         </div>
     );
-};
+});
 
 export default VideoCard ;
